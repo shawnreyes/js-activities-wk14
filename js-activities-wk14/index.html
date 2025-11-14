@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User Confirmation Status</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #status {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Confirmation Demo</h1>
+  <button id="confirmBtn">Click to Confirm</button>
+
+  <div id="status"></div>
+
+  <script>
+    const button = document.getElementById('confirmBtn');
+    const statusDiv = document.getElementById('status');
+
+    button.addEventListener('click', () => {
+      const userConfirmed = confirm('Do you confirm this action?');
+
+      if (userConfirmed) {
+        statusDiv.textContent = 'User confirmed: OK clicked.';
+      } else {
+        statusDiv.textContent = 'User cancelled: Cancel clicked.';
+      }
+    });
+  </script>
+  
+</body>
+</html>
